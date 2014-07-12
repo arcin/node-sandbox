@@ -1,0 +1,16 @@
+{
+  "name": "middleware-sandbox",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A private experimentation with middleware and the underlying source code",
+  "main": "middleware.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charles",
+  "license": "MIT",
+  "dependencies": {
+    "express": "*",
+    "connect": "*"
+  }
+}
