@@ -4,6 +4,8 @@ var http = require('http'),
 
 
 var server = http.createServer(function(req, res){
+  console.log('request http version: ', req.httpVersion);
+
   res.writeHead(200, {
     'Content-Length': message.length,
     'Content-Type': 'text/plain'
