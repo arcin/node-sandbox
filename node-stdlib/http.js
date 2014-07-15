@@ -1,10 +1,14 @@
-var http = require('http');
+var http = require('http'),
+    port = process.env.PORT || 3000,
+    message = 'success';
 
 
-var serverObject = http.Server();
-var createdServer = http.createServer(function(req, res){
-  res.end('hello');
+var server = http.createServer(function(req, res){
+  res.writeHead(200, {
+    'Content-Length': message.length,
+    'Content-Type': 'text/plain'
+  });
+  res.end(message);
 });
 
-console.log('server: ', serverObject);
-console.log('createdServer: ', createdServer);
+server.listen(port);
