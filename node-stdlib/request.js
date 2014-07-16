@@ -13,4 +13,8 @@ var req = http.request(options, function(res){
   });
 });
 
+req.on('response',function(res){
+  console.log(res.headers);
+});
+
 req.end();
