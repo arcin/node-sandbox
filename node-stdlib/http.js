@@ -9,7 +9,7 @@ var server = http.createServer(function(req, res){
   console.log('request trailers: ', req.trailers);
   console.log('request method: ', req.method);
   console.log('request url: ', req.url);
-  console.log('request socket: ', req.socket);
+//  console.log('request socket: ', req.socket);
 
 
 
