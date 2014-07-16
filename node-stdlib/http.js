@@ -8,7 +8,7 @@ var server = http.createServer(function(req, res){
   console.log('request headers: ', req.headers);
   console.log('request trailers: ', req.trailers);
   console.log('request method: ', req.method);
-
+  console.log('request url: ', req.url);
 
   res.writeHead(200, {
     'Content-Length': message.length,
