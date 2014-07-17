@@ -1,9 +1,11 @@
-var http = require('http');
+var http = require('http'),
+    net = require('net');
+
 
 var options = {
   hostname: 'localhost',
   port: 3000,
-  method: 'GET',
+  method: 'GET'
 };
 
 var req = http.request(options, function(res){
