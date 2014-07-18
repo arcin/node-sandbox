@@ -1,6 +1,4 @@
-var http = require('http'),
-    net = require('net');
-
+var http = require('http');
 
 var options = {
   hostname: 'localhost',
@@ -8,15 +6,16 @@ var options = {
   method: 'GET'
 };
 
+
 var req = http.request(options, function(res){
   res.setEncoding('utf-8');
   res.on('data', function(data){
     console.log('Response Body: ', data);
+    console.log(res.headers, res.statusCode);
+    console.log(new Date().getTime());
+
   });
 });
 
-req.on('response',function(res){
-  console.log(res.headers);
-});
 
 req.end();
