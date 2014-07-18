@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "utils-merge": "~1.0.0",
-    "strftime": "~0.8.1"
+    "strftime": "~0.8.1",
+    "mongodb": "~1.4.7"
   }
 }
