@@ -1,0 +1,14 @@
+{
+  "name": "unamed-app",
+  "version": "0.0.1",
+  "description": "dont know yet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charles Arciniega",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "*"
+  }
+}
