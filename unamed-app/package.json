@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "mongodb": "*",
-    "express": "*"
+    "express": "*",
+    "async": "*"
   }
 }
