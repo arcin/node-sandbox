@@ -9,6 +9,7 @@
   "author": "Charles Arciniega",
   "license": "MIT",
   "dependencies": {
-    "mongodb": "*"
+    "mongodb": "*",
+    "express": "*"
   }
 }
