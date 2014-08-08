@@ -2,7 +2,7 @@ mongo = require 'mongodb'
 async = require 'async'
 
 client = mongo.MongoClient
-
+exports = module.exports = {}
 findPerson = (restrictions, callback)->
   async.waterfall([
     (done)->
@@ -19,4 +19,4 @@ findPerson = (restrictions, callback)->
     callback(null, person)
   )
 
-module.exports.findPerson = findPerson
+exports.findPerson = findPerson
