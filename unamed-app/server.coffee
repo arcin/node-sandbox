@@ -1,5 +1,5 @@
 express = require 'express'
-db = require './dbConnection'
+db = require 'lib/dbConnection'
 
 app = express()
 
