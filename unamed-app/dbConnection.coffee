@@ -3,21 +3,20 @@ async = require 'async'
 
 client = mongo.MongoClient
 
-findPerson = (restrictions)->
+findPerson = (restrictions, callback)->
   async.waterfall([
-    (next)->
-      client.connect("mongodb://localhost:27017/noname_app", next)
-    , (db, next)->
+    (done)->
+      client.connect("mongodb://localhost:27017/noname_app", done)
+    , (db, done)->
         console.log "we are connected"
-        db.collection('people', next)
-    , (peopleCollection, next)->
-        peopleCollection.find(restrictions).toArray(next)
-    , (docs, next)->
-        next(null, docs)
-  ], (err, result)->
-    console.log err if err
-    return result
+        db.collection('people', done)
+    , (peopleCollection, done)->
+        peopleCollection.findOne(restrictions, done)
+    , (docs, done)->
+        done(null, docs)
+  ], (err, person)->
+    callback err if err
+    callback(null, person)
   )
-
 
 module.exports.findPerson = findPerson

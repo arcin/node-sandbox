@@ -8,23 +8,23 @@
 
   client = mongo.MongoClient;
 
-  findPerson = function(restrictions) {
+  findPerson = function(restrictions, callback) {
     return async.waterfall([
-      function(next) {
-        return client.connect("mongodb://localhost:27017/noname_app", next);
-      }, function(db, next) {
+      function(done) {
+        return client.connect("mongodb://localhost:27017/noname_app", done);
+      }, function(db, done) {
         console.log("we are connected");
-        return db.collection('people', next);
-      }, function(peopleCollection, next) {
-        return peopleCollection.find(restrictions).toArray(next);
-      }, function(docs, next) {
-        return next(null, docs);
+        return db.collection('people', done);
+      }, function(peopleCollection, done) {
+        return peopleCollection.findOne(restrictions, done);
+      }, function(docs, done) {
+        return done(null, docs);
       }
-    ], function(err, result) {
+    ], function(err, person) {
       if (err) {
-        console.log(err);
+        callback(err);
       }
-      return result;
+      return callback(null, person);
     });
   };
 

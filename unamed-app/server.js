@@ -11,8 +11,8 @@
   app.get('/:name', function(req, res) {
     return db.findPerson({
       name: req.params.name
-    }).then(function(data) {
-      return res.send(data);
+    }, function(err, person) {
+      return res.send("<h1>" + person.name + "</h1>");
     });
   });
 
