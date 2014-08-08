@@ -13,5 +13,9 @@
     "express": "*",
     "async": "*",
     "mongoose": "~3.8.14"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "coffee-script": "~1.7.1"
   }
 }
