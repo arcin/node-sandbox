@@ -2,7 +2,7 @@ express = require 'express'
 db = require 'lib/dbConnection'
 
 app = express()
-
+exports = module.exports = {}
 
 app.get('/:name', (req, res)->
   db.findPerson({name: req.params.name}, (err, person)->
@@ -14,4 +14,4 @@ app.get('/:name', (req, res)->
 
 app.listen(3000)
 
-module.exports = app
+exports = app
