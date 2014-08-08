@@ -4,7 +4,7 @@
 
   express = require('express');
 
-  db = require('lib/dbConnection');
+  db = require('./lib/dbConnection');
 
   app = express();
 
