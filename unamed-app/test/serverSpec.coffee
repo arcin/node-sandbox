@@ -3,11 +3,11 @@ app = require('../server')
 request = require('supertest')
 
 describe("Routes", ->
-  describe("/:name", ->
-    it("should be ok", ->
+  describe("/people/:name", ->
+    it("should return the persons name", (done)->
       request(app)
-      .get('/')
-      .expect(200)
+      .get('/people/charles')
+      .expect('<h1>charles</h1>')
       .end((err, res)->
         console.log err if err
         done()
