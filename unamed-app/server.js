@@ -10,7 +10,7 @@
 
   exports = module.exports = {};
 
-  app.get('/:name', function(req, res) {
+  app.get('/people/:name', function(req, res) {
     return db.findPerson({
       name: req.params.name
     }, function(err, person) {
@@ -20,6 +20,6 @@
 
   app.listen(3000);
 
-  exports = app;
+  module.exports = app;
 
 }).call(this);
