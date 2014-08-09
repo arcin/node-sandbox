@@ -9,9 +9,9 @@
   request = require('supertest');
 
   describe("Routes", function() {
-    return describe("/:name", function() {
-      return it("should be ok", function() {
-        return request(app).get('/').expect(200).end(function(err, res) {
+    return describe("/people/:name", function() {
+      return it("should return the persons name", function(done) {
+        return request(app).get('/people/charles').expect('<h1>charles</h1>').end(function(err, res) {
           if (err) {
             console.log(err);
           }
